@@ -1,0 +1,8 @@
+# ignoruj pluginy
+plugins/
+
+# cache i upgrade
+upgrade/
+upgrade-temp-backup/
+
+uploads/

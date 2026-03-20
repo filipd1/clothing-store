@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'header.css';
+@import 'footer.css';
+@import 'front-page.css';
+@import 'testimonies.css';
+@import 'reviews.css';
+@import 'search.css';
+@import 'product.css';
+@import 'cart.css';
+@import 'checkout.css';
+@import 'my-account.css';
+@import 'wishlist.css';
+
+:root {
+    --bg-color: #fff;
+    --font-color-main: #000;
+    --font-color-lighter: rgba(0, 0, 0, .6);
+    --font-color-secondary: #fff;
+    --main: #000;
+    --secondary: #F0F0F0;
+    --border: rgba(0, 0, 0, .1);
+    --rating-star: #ffc107;
+    --discount: #ff4d4d;
+    
+    color: var(--font-color-main);
+    background: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 360px;
+    color: var(--font-color-main);
+}
+
+h1, h2 {
+    font-family: "Candal", sans-serif;
+}
+
+a {
+    color: var(--font-color-main);
+    text-decoration: none;
+}
+
+.btn {
+    border-radius: 62px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    cursor: pointer;
+
+     &:hover {
+        transition: .4s;
+    }
+}
+
+.btn-main {
+    color: var(--font-color-secondary);
+    background-color: var(--main);
+    border: 1px solid var(--main);
+
+    &:hover {
+        color: var(--font-color-main);
+        background-color: var(--bg-color);
+    }
+}
+
+
+.btn-secondary {
+    color: var(--font-color-main);
+    background-color: var(--bg-color);
+    border: 1px solid var(--main);
+
+    &:hover {
+        color: var(--font-color-secondary);
+        background-color: var(--main);
+    }
+}
+
+.btn-wishlist {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+    background: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        stroke: red;
+
+        path {
+            fill: transparent;
+        }
+    }
+
+    &:hover {
+        svg {
+            path {
+                fill: red;
+                transition: .4s;
+            }
+        }
+    }
+}
+
+.btn-wishlist.added {
+    path {
+        fill: red;
+    }
+}
+
+.btn-view-all {
+    min-width: 200px;
+    justify-self: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1240px;
+    margin-inline: auto;
+
+    .container-title {
+        font-size: 48px;
+        font-weight: 500;
+        margin: 50px 0 25px 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .woocommerce-breadcrumb {
+        margin: 24px 0;
+        font-size: 16px;
+
+        a {
+            color: var(--font-color-lighter);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+hr {
+    opacity: .3;
+    margin: 30px 0;
+}
+
+.container-section {
+    margin-bottom: 80px;
+}
+
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 100%;
+    }
+}

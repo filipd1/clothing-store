@@ -1,0 +1,123 @@
+@charset "UTF-8";
+.site-header {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.main-menu {
+  display: flex;
+  gap: 20px;
+}
+.main-menu li {
+  position: relative;
+}
+.main-menu li a {
+  font-size: 16px;
+  font-weight: 400;
+}
+.main-menu li a:hover {
+  color: var(--font-color-lighter);
+}
+.main-menu .current-menu-item a {
+  font-weight: bold;
+}
+.main-menu .menu-item-has-children:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.main-menu .menu-item-has-children > a::after {
+  content: "▾";
+  margin-left: 4px;
+  font-size: 16px;
+}
+.main-menu .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-color);
+  padding: 20px;
+  min-width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.2s;
+  z-index: 2;
+  pointer-events: none;
+}
+.main-menu .sub-menu li {
+  padding: 0;
+}
+.main-menu .sub-menu li a {
+  display: block;
+  white-space: nowrap;
+  padding: 10px 5px;
+}
+.main-menu .sub-menu .sub-menu {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  box-shadow: none;
+  padding: 0;
+  display: block;
+}
+.main-menu .sub-menu .sub-menu li {
+  margin-left: 15px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--font-color-main);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 66%;
+  height: 100vh;
+  background: var(--accent);
+  transition: right 0.3s ease;
+  padding: 100px 30px;
+  font-size: 20px;
+  z-index: 10;
+  display: none;
+}
+.mobile-menu li {
+  padding: 20px;
+}
+.mobile-menu li a {
+  color: var(--font-color-secondary);
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    width: 100%;
+    padding: 30px;
+  }
+  .site-header .btn {
+    display: none;
+  }
+  .main-menu {
+    display: none;
+  }
+  .mobile-menu-toggle,
+  .mobile-menu {
+    display: block;
+  }
+  .mobile-menu.active {
+    right: 0;
+  }
+}/*# sourceMappingURL=header.css.map */

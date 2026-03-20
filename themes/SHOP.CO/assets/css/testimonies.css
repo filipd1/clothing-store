@@ -1,0 +1,50 @@
+.testimonies .testimonies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.testimonies .testimonies-header h2 {
+  font-size: 48px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.testimonies .testimonies-header .testimonies-controls {
+  display: flex;
+  gap: 10px;
+}
+.testimonies .testimonies-header .testimonies-controls .btn-testimonies {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.testimonies .testimonies-header .testimonies-controls .btn-testimonies svg path {
+  fill: black;
+}
+.testimonies .testimonies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.testimony-card {
+  padding: 28px 32px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+.testimony-card .testimony-card-name {
+  font-size: 20px;
+  color: var(--font-color-main);
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.testimony-card .testimony-card-content {
+  font-size: 16px;
+  color: var(--font-color-lighter);
+}
+.testimony-card .testimony-card-date {
+  font-size: 16px;
+  color: var(--font-color-lighter);
+  font-weight: 400;
+  margin-top: 12px;
+}/*# sourceMappingURL=testimonies.css.map */

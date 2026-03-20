@@ -1,0 +1,113 @@
+.site-footer {
+    color: var(--font-color-main);
+    background-color: var(--secondary);
+    margin-top: 200px;
+
+    .footer-container {
+        max-width: 1240px;
+        padding: 24px 0;
+        margin-inline: auto;
+
+        .footer-newsletter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--main);
+            border-radius: 20px;
+            padding: 36px 64px;
+            gap: 80px;
+            transform: translateY(-50%);
+
+            h2 {
+                width: 60%;
+                font-size: 40px;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: var(--font-color-secondary);
+            }
+
+            .wpforms-container {
+                width: 40%;
+
+                .wpforms-field-container {
+                    input {
+                        border-radius: 62px;
+                        padding: 16px 32px;
+                        font-size: 16px;
+                        min-width: 100%;
+                    }
+                }
+
+                .wpforms-submit-container {
+                    button {
+                        min-width: 100%;
+                        border-radius: 62px;
+                        color: var(--font-color-main);
+                        background-color: var(--bg-color);
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(4, 1fr);
+            gap: 20px;
+
+            .footer-logo {
+
+                p {
+                    font-size: 16px;
+                    color: var(--font-color-lighter);
+                    margin: 15px 0 25px 0;
+                }
+            }
+
+            .footer-col {
+
+                h4 {
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    font-weight: 600;
+                }
+
+                .footer-menu {
+                    margin-top: 15px;
+                    
+                    .menu-item {
+                        padding: 8px 0;
+
+                        a {
+                            font-size: 16px;
+                            color: var(--font-color-lighter);
+                        }
+                    }
+                }
+            }
+        }
+
+        .absolute-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                font-size: 14px;
+                color: var(--font-color-lighter);
+            }
+        }
+
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .site-footer {
+
+        .footer-container {
+            width: 100%;
+            padding: 30px;
+        }
+    }
+}
