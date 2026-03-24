@@ -6,3 +6,5 @@ upgrade/
 upgrade-temp-backup/
 
 uploads/
+
+debug.log
