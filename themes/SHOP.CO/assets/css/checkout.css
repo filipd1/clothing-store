@@ -1,10 +1,10 @@
-.checkout-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px;
-}
-.checkout-container .checkout h2 {
+.checkout-container h1 {
   margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.checkout-container .checkout h2, .checkout-container .checkout h3 {
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 }
 .checkout-container .checkout .checkout-grid {
   display: grid;
@@ -13,5 +13,28 @@
 }
 .checkout-container .checkout .checkout-grid .checkout-right {
   border: 1px solid #ddd;
-  padding: 30px;
+  padding: 40px;
+}
+.checkout-container .checkout .checkout-grid .checkout-left .woocommerce-billing-fields {
+  margin-bottom: 20px;
+}
+.checkout-container .checkout .woocommerce-checkout-payment {
+  background-color: var(--secondary) !important;
+}
+.checkout-container .checkout .place-order .btn {
+  border-radius: 62px;
+  padding: 12px 16px;
+  color: var(--font-color-secondary);
+  background-color: var(--main);
+  border: 1px solid var(--main);
+}
+.checkout-container .checkout .place-order .btn:hover {
+  color: var(--font-color-main);
+  background-color: var(--bg-color);
+  transition: 0.4s;
+}
+
+.woocommerce-order-details h2,
+.woocommerce-column h2 {
+  margin-bottom: 20px;
 }/*# sourceMappingURL=checkout.css.map */
