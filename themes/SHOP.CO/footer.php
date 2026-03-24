@@ -14,7 +14,7 @@
                     <?php the_custom_logo(); ?>
                 <?php endif; ?>
 
-                <p>We have cloths that suits your style and which you're proud to wear. From women to mne</p>
+                <p>We have cloths that suits your style and which you're proud to wear. From women to men</p>
 
                 <div class="footer-icons">
                     <?php
