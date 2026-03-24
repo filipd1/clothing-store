@@ -7,5 +7,4 @@ Woocommerce SHOP.CO
 - Profil użytkownika
 - Zakładki Product details/FAQS na stronie produktu
 - Responsywność
-- Strona Brands
 - Content jako ACF

@@ -1,0 +1,17 @@
+.brands-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.brands-list .brand-item {
+  background-color: var(--main);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.brands-list .brand-item a {
+  color: var(--font-color-secondary);
+  font-size: 40px;
+  font-family: "Candal", sans-serif;
+}/*# sourceMappingURL=brands.css.map */

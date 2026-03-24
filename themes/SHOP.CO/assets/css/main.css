@@ -10,6 +10,7 @@
 @import 'checkout.css';
 @import 'my-account.css';
 @import 'wishlist.css';
+@import 'brands.css';
 :root {
   --bg-color: #fff;
   --font-color-main: #000;
