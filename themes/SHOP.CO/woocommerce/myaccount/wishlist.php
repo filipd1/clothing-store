@@ -21,8 +21,8 @@
             if (!$product) continue;
     ?>
         <div class="wishlist-item">
-
-            <a href="?remove_wishlist=<?php echo $product_id; ?>" class="remove-wishlist">X</a>
+            
+            <a href="<?php echo esc_url( add_query_arg( 'toggle_wishlist', $product_id ) ); ?>" class="remove-wishlist">X</a>
 
             <a href="<?php echo get_permalink($product_id); ?>">
                 <?php echo $product->get_image(); ?>
@@ -30,8 +30,6 @@
             </a>
 
             <p><?php echo $product->get_price_html(); ?></p>
-
-            <a href="?add-to-cart=<?php echo $product_id; ?>" class="btn btn-wishlist">Add to cart</a>
 
         </div>
     <?php endforeach; ?>

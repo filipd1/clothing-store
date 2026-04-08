@@ -6,7 +6,8 @@
   align-items: stretch;
 }
 .wishlist-grid .wishlist-item {
-  border: 1px solid #eee;
+  background-color: #fff;
+  border-radius: 12px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -30,9 +31,9 @@
 }
 .wishlist-grid .wishlist-item .remove-wishlist {
   position: absolute;
+  font-weight: bold;
   top: 5px;
   right: 5px;
-  font-size: 15px;
-  text-decoration: none;
   opacity: 0.5;
+  color: var(--discount);
 }/*# sourceMappingURL=wishlist.css.map */

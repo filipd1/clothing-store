@@ -48,22 +48,24 @@ add_filter('woocommerce_account_menu_items', function($items) {
     return $items;
 });
 
+
 add_action('init', function() {
     add_rewrite_endpoint('wishlist', EP_ROOT | EP_PAGES);
 });
+
 
 add_filter('woocommerce_account_menu_items', function($items) {
     $new = [];
     $new['dashboard'] = $items['dashboard'];
     $new['wishlist'] = 'Wishlist';
     $new['orders'] = $items['orders'];
-    $new['downloads'] = $items['downloads'];
     $new['edit-address'] = $items['edit-address'];
     $new['edit-account'] = $items['edit-account'];
     $new['customer-logout'] = $items['customer-logout'];
 
     return $new;
 });
+
 
 add_action('woocommerce_account_wishlist_endpoint', function() {
 
@@ -76,26 +78,29 @@ add_action('woocommerce_account_wishlist_endpoint', function() {
 
 });
 
-add_action('init', function() {
 
-    if (!isset($_GET['toggle_wishlist'])) return;
-    if (!is_user_logged_in()) return;
+add_action('template_redirect', function() {
+    if (!isset($_GET['toggle_wishlist']) || !is_user_logged_in()) {
+        return;
+    }
 
     $product_id = intval($_GET['toggle_wishlist']);
+    if (!$product_id) return;
+
     $user_id = get_current_user_id();
     $wishlist = get_user_meta($user_id, 'wishlist', true);
+    if (!is_array($wishlist)) $wishlist = [];
 
-    if (!$wishlist) $wishlist = [];
     if (in_array($product_id, $wishlist)) {
-
         $wishlist = array_diff($wishlist, [$product_id]);
-
     } else {
         $wishlist[] = $product_id;
     }
 
-    update_user_meta($user_id, 'wishlist', $wishlist);
-    wp_redirect(remove_query_arg('toggle_wishlist'));
+    update_user_meta($user_id, 'wishlist', array_values($wishlist));
+
+    $redirect_url = remove_query_arg('toggle_wishlist');
+    wp_safe_redirect($redirect_url);
     exit;
 });
 

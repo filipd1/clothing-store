@@ -18,7 +18,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 		<tbody>
 			<?php
 			foreach ( $customer_orders->orders as $customer_order ) {
-				$order      = wc_get_order( $customer_order ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				$order      = wc_get_order( $customer_order );
 				$item_count = $order->get_item_count() - $order->get_item_count_refunded();
 				?>
 				<tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-<?php echo esc_attr( $order->get_status() ); ?> order">
@@ -35,7 +35,6 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 								<?php do_action( 'woocommerce_my_account_my_orders_column_' . $column_id, $order ); ?>
 
 							<?php elseif ( $is_order_number ) : ?>
-								<?php /* translators: %s: the order number, usually accompanied by a leading # */ ?>
 								<a href="<?php echo esc_url( $order->get_view_order_url() ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'View order number %s', 'woocommerce' ), $order->get_order_number() ) ); ?>">
 									<?php echo esc_html( _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_order_number() ); ?>
 								</a>
@@ -48,7 +47,6 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 							<?php elseif ( 'order-total' === $column_id ) : ?>
 								<?php
-								/* translators: 1: formatted order total 2: total order items */
 								echo wp_kses_post( sprintf( _n( '%1$s for %2$s item', '%1$s for %2$s items', $item_count, 'woocommerce' ), $order->get_formatted_order_total(), $item_count ) );
 								?>
 
@@ -57,15 +55,13 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 								$actions = wc_get_account_orders_actions( $order );
 
 								if ( ! empty( $actions ) ) {
-									foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+									foreach ( $actions as $key => $action ) {
 										if ( empty( $action['aria-label'] ) ) {
-											// Generate the aria-label based on the action name.
-											/* translators: %1$s Action name, %2$s Order number. */
 											$action_aria_label = sprintf( __( '%1$s order number %2$s', 'woocommerce' ), $action['name'], $order->get_order_number() );
 										} else {
 											$action_aria_label = $action['aria-label'];
 										}
-										echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . '" aria-label="' . esc_attr( $action_aria_label ) . '">' . esc_html( $action['name'] ) . '</a>';
+										echo '<a href="' . esc_url( $action['url'] ) . '" class="btn btn-main woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . '" aria-label="' . esc_attr( $action_aria_label ) . '">' . esc_html( $action['name'] ) . '</a>';
 										unset( $action_aria_label );
 									}
 								}
