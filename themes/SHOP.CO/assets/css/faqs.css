@@ -1,0 +1,15 @@
+.faq-list .faq-item {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+.faq-list .faq-item h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--font-color-main);
+  margin-bottom: 10px;
+}
+.faq-list .faq-item p {
+  font-size: 16px;
+  color: var(--font-color-lighter);
+}/*# sourceMappingURL=faqs.css.map */

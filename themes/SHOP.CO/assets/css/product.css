@@ -311,4 +311,9 @@
 .tab-title span {
   font-size: 14px;
   font-weight: normal;
+}
+
+.tab-empty {
+  color: var(--font-color-lighter);
+  font-size: 14px;
 }/*# sourceMappingURL=product.css.map */

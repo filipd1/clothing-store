@@ -1,0 +1,15 @@
+.details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.details-list .details-item {
+  display: flex;
+}
+.details-list .details-item span {
+  font-weight: bold;
+  min-width: 250px;
+}
+.details-list .details-item p {
+  color: var(--font-color-lighter);
+}/*# sourceMappingURL=details.css.map */

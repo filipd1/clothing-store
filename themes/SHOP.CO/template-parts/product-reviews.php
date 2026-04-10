@@ -19,7 +19,7 @@
                     'callback' => 'custom_woocommerce_review_callback'
                 ], $comments);
             else :
-                echo '<p>No reviews yet. Be the first to review!</p>';
+                echo '<p class="tab-empty">No reviews yet. Be the first to review!</p>';
             endif;
         ?>
     </ul>

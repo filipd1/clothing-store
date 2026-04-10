@@ -1,0 +1,18 @@
+.details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .details-item {
+        display: flex;
+
+        span {
+            font-weight: bold;
+            min-width: 250px;
+        }
+
+        p {
+            color:var(--font-color-lighter);
+        }
+    }
+}
