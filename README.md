@@ -7,4 +7,4 @@ Woocommerce SHOP.CO
 - Responsywność
 - Content jako ACF
 
-![Store front page](./front-page.png)
+![Store front page](./front_page.png)
