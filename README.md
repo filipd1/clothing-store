@@ -6,3 +6,5 @@ Woocommerce SHOP.CO
 - Custom chekout
 - Responsywność
 - Content jako ACF
+
+![Store front page](./front-page.png)
