@@ -5,19 +5,33 @@
 ?>
 
 <div class="container account-container">
-    <h1>My account</h1>
+    <?php if ( is_user_logged_in() ) : ?>
 
-    <div class="account-layout">
+        <h1>My account</h1>
 
-        <div class="account-menu">
-            <?php wc_get_template('myaccount/navigation.php'); ?>
+        <div class="account-layout">
+
+            <div class="account-menu">
+                <?php wc_get_template('myaccount/navigation.php'); ?>
+            </div>
+
+            <div class="account-content">
+                <?php woocommerce_account_content(); ?>
+            </div>
+
         </div>
 
-        <div class="account-content">
-            <?php woocommerce_account_content(); ?>
+    <?php else : ?>
+
+        <div class="login-page-wrapper">
+            <?php 
+                woocommerce_output_all_notices();
+                wc_get_template('myaccount/form-login.php'); 
+            ?>
         </div>
 
-    </div>
+    <?php endif; ?>
+
 </div>
 
 <?php get_footer(); ?>

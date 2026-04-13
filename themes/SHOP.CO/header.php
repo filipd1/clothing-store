@@ -23,6 +23,7 @@
     <?php get_template_part('template-parts/components/search-form'); ?>
 
     <div class="header-icons">
+
         <a href="<?php echo wc_get_cart_url(); ?>">
             <?php
                 echo file_get_contents(
@@ -30,13 +31,37 @@
                 );
             ?>
         </a>
-        <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">
-            <?php
-                echo file_get_contents(
-                    get_stylesheet_directory() . '/assets/icons/user.svg'
-                );
-            ?>
-        </a>
+
+        <div class="user-dropdown-container">
+            <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">
+                <?php
+                    echo file_get_contents(
+                        get_stylesheet_directory() . '/assets/icons/user.svg'
+                    );
+                ?>
+            </a>
+
+            <ul class="sub-menu user-dropdown">
+
+                <?php if (is_user_logged_in()) : ?>
+                    <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
+                        <li class="<?=wc_get_account_menu_item_classes($endpoint); ?>">
+                            <a href="<?=esc_url(wc_get_account_endpoint_url($endpoint)); ?>">
+                                <?=esc_html($label); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <li>
+                        <a href="<?=get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">
+                            Login
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+            </ul>
+        </div>
+
     </div>
 
     <button class="mobile-menu-toggle" aria-label="Open menu">
