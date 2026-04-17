@@ -3,7 +3,7 @@ Woocommerce SHOP.CO
 # TODO
 
 - Update koszyka
-- Custom chekout
+- Galeria zdjęć na stronie produktu
 - Responsywność
 - Content jako ACF
 
@@ -11,3 +11,9 @@ Woocommerce SHOP.CO
 
 
 ![Store shop page](./shop_page.png)
+
+
+![Store cart page](./cart.png)
+
+
+![Store product page](./product.png)
