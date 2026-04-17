@@ -5,14 +5,17 @@
 .checkout-container .checkout h2, .checkout-container .checkout h3 {
   margin-bottom: 20px;
   font-family: "Poppins", sans-serif;
+  font-size: 20px;
 }
 .checkout-container .checkout .checkout-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  gap: 20px;
 }
-.checkout-container .checkout .checkout-grid .checkout-right {
-  border: 1px solid #ddd;
+.checkout-container .checkout .checkout-grid .checkout-right,
+.checkout-container .checkout .checkout-grid .checkout-left {
+  border: 1px solid var(--border);
+  border-radius: 20px;
   padding: 40px;
 }
 .checkout-container .checkout .checkout-grid .checkout-left .woocommerce-billing-fields {

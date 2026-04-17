@@ -10,15 +10,18 @@
         h2,h3 {
             margin-bottom: 20px;
             font-family: "Poppins", sans-serif;
+            font-size: 20px;
         }
 
         .checkout-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 40px;
+            gap: 20px;
 
-            .checkout-right {
-                border: 1px solid #ddd;
+            .checkout-right,
+            .checkout-left {
+                border: 1px solid var(--border);
+                border-radius: 20px;
                 padding: 40px;
             }
 

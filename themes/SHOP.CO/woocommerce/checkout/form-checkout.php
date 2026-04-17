@@ -17,14 +17,11 @@
 
             <div class="checkout-left">
                 <?php do_action('woocommerce_checkout_billing'); ?>
-                
-                <h2>Shipping details</h2>
                 <?php do_action('woocommerce_checkout_shipping'); ?>
             </div>
 
             <div class="checkout-right">
                 <h2>Your order</h2>
-                
                 <div id="order_review" class="woocommerce-checkout-review-order">
                     <?php do_action('woocommerce_checkout_order_review'); ?>
                 </div>
